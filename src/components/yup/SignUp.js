@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import OneInput from "./one-input";
 import { schema } from "consts/schema";
+import { Button } from "@mui/material";
 
 const SignUpForm = () => {
   const {
@@ -27,24 +28,16 @@ const SignUpForm = () => {
         control={control}
         name="password"
         label="Password"
-        // value={value}
         errors={errors}
       />
       <OneInput
         control={control}
         name="passwordConfirm"
         label="Password Confirm"
-        // value={value}
         errors={errors}
       />
-      <OneInput
-        control={control}
-        name="age"
-        label="Age"
-        // value={value}
-        errors={errors}
-      />
-      <input type="submit" />
+      <OneInput control={control} name="age" label="Age" errors={errors} />
+      <Button variant="outlined">회원가입</Button>
     </form>
   );
 };
