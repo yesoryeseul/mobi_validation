@@ -19,6 +19,7 @@ const SignUpForm = () => {
 
   const onSubmit = (data) => {
     console.log("onSubmit", data);
+    alert(`${data.email.substring(0, data.email.indexOf("@"))} 님 환영합니다`);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -36,8 +37,11 @@ const SignUpForm = () => {
         label="Password Confirm"
         errors={errors}
       />
+      <OneInput control={control} name="phone" label="phone" errors={errors} />
       <OneInput control={control} name="age" label="Age" errors={errors} />
-      <Button variant="outlined">회원가입</Button>
+      <Button variant="outlined" type="submit">
+        회원가입
+      </Button>
     </form>
   );
 };
